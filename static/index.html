@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Home</h1>
+        <div class="links">
+        <a href="https://vilasrhegde.github.io/" target="_blank">About</a>
+        </div>
+    </nav>
+
+    <section class="container">
+        <form action="/statement" method="GET" class="getNumber">
+            <input type="number" readonly name="number" value="1001" placeholder="Enter your A/C number">
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+        <div class="actions">
+            <div class="details">
+                <h1>Details</h1>
+                <h2>John</h2>
+                <h2>0.0</h2>
+                <!-- <h2>{{Phone}}</h2> -->
+                <!-- <h2>{{.Address}}</h2> -->
+            </div>
+                <form action="./deposit" method="GET" class="deposit">
+                    <input type="hidden" value="1001" name="number">
+                    <input type="number" name="amount" class="actionInputs" placeholder="Enter amount"></input>
+                    <input type="submit" value="Deposit" id="submit">
+                </form>
+                <form action="./withdraw" method="GET" class="withdraw">
+                    <input type="hidden" value="1001" name="number">
+                    <input type="number" name="amount" class="actionInputs" placeholder="Enter amount"></input>
+                    <input type="submit" value="Withdraw" id="submit">
+                </form>
+    
+        </div>
+    </section>
+
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+        *,html{
+            font-family: 'Josefin Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: none;
+        }
+        body{
+            background: url("./background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            max-height: 100vh;
+            width: 100%;
+            z-index: -10;
+            /* overflow: hidden; */
+        }
+        .navbar{
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: auto;
+            min-height: 10vh;
+            background: rgba(0, 0, 0, 0.5);
+            flex-direction: row;
+            box-shadow: 0 0 5px 5px #000;
+            backdrop-filter: blur(5px);
+            counter-reset: #fff;
+        }
+        .navbar h1{
+            position: relative;
+            text-align: left;
+            margin: auto 0;
+            left: 1rem;
+            color: #fff;
+            font-weight: 900;
+            font-size: 2rem;
+
+        }
+        .links{
+            display: flex;
+            flex-direction: row;
+            position: absolute; 
+            align-items: center;
+            justify-content: right;
+            right: 5%;
+            height: 100%;
+
+
+        }
+        .links a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-self:space-between;
+            align-items:center;
+            /* background: red; */
+
+  
+        }
+
+        .getNumber{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            height: 30%;
+            width: 30%;
+            margin-top: 3%;
+            background: rgba(42, 30, 30, 0.366);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: .3s ease;
+            box-shadow: 0px 0px 1rem 0.2rem #00000059;
+
+
+        }
+        .getNumber:hover{
+            padding: 2.3rem;
+            box-shadow: 0px 0px 4rem 1rem #00000074;
+            background: rgba(0, 0, 0, 0.5);
+
+        }
+        .getNumber input{
+            padding: 1.5rem;
+            margin: 0.5rem 0;   
+            border: 50%;
+            border: none;
+            outline: none;
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        #submit{
+            background: black;
+            border: none;
+            outline: none;
+            color: #fff;
+            min-height: 4rem;
+            min-width: 10rem;
+        }
+        .actions{
+            display: flex;
+            flex-direction: row;
+            /* background: yellow; */
+            height: auto;
+            width: 90%;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2%;
+            /* box-shadow: 0 0 8px 10px rgba(255, 255, 255, 0.107); */
+
+
+        }
+        .details, .deposit,.withdraw{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background: rgba(69, 69, 69, 0.481);
+            position: relative;
+            height: 200px;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px;
+            backdrop-filter: blur(3px);
+            margin: 10px;
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.446);
+
+        }
+        h1, h2{
+            color: #fff;
+            font-size: 1.3rem ;
+        }
+        .actionInputs{
+            padding: 1rem;
+            color: #000;
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            min-width: 10rem;
+            
+        }
+        
+
+    </style>
+</body>
+</html>
